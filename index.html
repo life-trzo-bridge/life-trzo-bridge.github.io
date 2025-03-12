@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trézor Bridge® | Introducing the New Trézor App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar {
+            transition: background-color 0.3s;
+        }
+        .navbar-light {
+            background-color: #f8f9fa;
+        }
+        .navbar-dark {
+            background-color: #343a40;
+        }
+        .btn {
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s ease-in-out;
+            
+        }
+        .btn-light {
+            background-color: #f8f9fa;
+            color: black;
+            border: 2px solid transparent; /* No border by default */
+        }
+        .btn-dark {
+            background-color: #343a40;
+            color: white;
+            border: 2px solid transparent; /* No border by default */
+        }
+        .toggle-btn {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .theme-dark {
+            background-color: #121212;
+            color: white;
+        }
+        .centered-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust the height to place content below the navbar */
+            text-align: center;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        /* Gradient Button Styles */
+        .gradient-btn {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            border: 2px solid #00c6ff; /* Solid outline with gradient color */
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px;
+        }
+        /* Button Outline Effect */
+        .gradient-btn:hover {
+            background: transparent;
+            color: white;
+            border-color: #0072ff; /* Blue outline on hover */
+        }
+        .gradient-btn:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(0, 198, 255, 0.6); /* Custom focus effect with box-shadow */
+        }
+
+        /* Blog Section Styling */
+        .blog-section {
+            margin-top: 40px;
+            padding: 40px 0;
+        }
+        .blog-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .blog-content {
+            padding-left: 20px;
+        }
+        .blog-heading {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0072ff;
+        }
+        .blog-text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Accordion Styling */
+        .accordion-item {
+            background-color: #ffffff;
+            border: none;
+        }
+        .accordion-button {
+            background-color: #0072ff;
+            color: white;
+            border: 1px solid #0072ff;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #0056b3;
+            color: white;
+        }
+        .accordion-body {
+            background-color: #f8f9fa;
+        }
+        .accordion-body.theme-dark {
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .footer.theme-dark {
+            background-color: #343a40;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Unchanged) -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">    🛡️TreŽoř Bridge</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <button class="btn btn-light">Home</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-light">About</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-light">Services</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-light">Contact</button>
+                </li>
+                <li class="nav-item">
+                    <!-- Using FontAwesome icons for sun and moon -->
+                    <span class="toggle-btn" id="theme-toggle"><i class="fas fa-sun"></i></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Centered Content -->
+    <div class="centered-content">
+        <h1>Unlock the Future with <span class="gradient-text">TreŽoř Bridge</span></h1>
+      <p>Enter Trezor Bridge, the ultimate tool that seamlessly connects your Trezor hardware wallet to your browser, ensuring your digital assets are always protected.</p>
+
+        <!-- Gradient Buttons Centered Below -->
+        <div class="button-container">
+            <button class="gradient-btn">Download TreŽoř</button>
+            <button class="gradient-btn">Get New TreŽoř Safe 5</button>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="container blog-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <!-- Image for Blog -->
+                <img src="https://i.ibb.co/QFMz6k5C/tr.webp" alt="Blog Image" class="blog-img">
+            </div>
+            <div class="col-md-6 blog-content">
+                <!-- Blog Content -->
+                <h2 class="blog-heading">Why Choose Trezor Bridge?</h2>
+                <p class="blog-text">
+                    Trezor Bridge is more than just software – it’s your bridge to a safer, smarter crypto experience. Designed by the pioneers of hardware wallets, it combines cutting-edge technology with user-friendly design, so you can trade, transfer, and track your assets with confidence.
+                </p>
+                <button class="gradient-btn">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is Trezor Bridge, and why do I need it?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Trezor Bridge is a communication tool that allows your Trezor hardware wallet to connect securely with your web browser. It enables you to manage your cryptocurrency assets, make transactions, and access wallet features through Trezor's web interface. You need it to ensure a seamless and secure connection between your Trezor device and supported browsers, keeping your private keys offline and protected at all times.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Is Trezor Bridge compatible with all operating systems?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Yes, Trezor Bridge is designed to work across multiple operating systems, including Windows, macOS, and Linux. It ensures broad compatibility so you can securely manage your crypto assets regardless of your device. Simply download the version that matches your OS, install it, and connect your Trezor hardware wallet to get started.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 TreŽoř Bridge. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const buttons = document.querySelectorAll('.btn');
+        const accordionBodies = document.querySelectorAll('.accordion-body');
+        const footer = document.querySelector('.footer');
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('theme-dark');
+            navbar.classList.toggle('navbar-light');
+            navbar.classList.toggle('navbar-dark');
+            buttons.forEach(btn => {
+                btn.classList.toggle('btn-light');
+                btn.classList.toggle('btn-dark');
+            });
+
+            accordionBodies.forEach(body => {
+                body.classList.toggle('theme-dark');
+            });
+
+            footer.classList.toggle('theme-dark');
+
+            // Change the icon from sun to moon or vice versa
+            if (body.classList.contains('theme-dark')) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon
+            }
+        });
+    </script>
+</body>
+</html>
